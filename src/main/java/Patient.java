@@ -7,7 +7,8 @@ public class Patient {
     private Long id;
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST/*,
+    fetch = FetchType.EAGER*/)
     private MedicalFile medicalFile;
 
     public MedicalFile getMedicalFile() {
@@ -16,6 +17,7 @@ public class Patient {
 
     public void setMedicalFile(MedicalFile medicalFile) {
         this.medicalFile = medicalFile;
+        medicalFile.setPatient(this);
     }
 
     public Long getId() {
@@ -28,5 +30,21 @@ public class Patient {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void removeMedicalFile(){
+        if(medicalFile != null){
+            medicalFile.setPatient(null);
+            medicalFile = null;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", medicalFile=" + medicalFile +
+                '}';
     }
 }

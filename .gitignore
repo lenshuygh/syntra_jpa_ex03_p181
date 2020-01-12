@@ -4,3 +4,9 @@
 /.idea/compiler.xml
 /.idea/misc.xml
 /.idea/encodings.xml
+/target/classes/MedicalFile.class
+/target/classes/META-INF/orm.xml
+/target/classes/Patient.class
+/target/classes/META-INF/persistence.xml
+/target/classes/SavePatient.class
+/.idea/uiDesigner.xml

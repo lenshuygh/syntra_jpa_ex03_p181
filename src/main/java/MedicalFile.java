@@ -31,4 +31,22 @@ public class MedicalFile {
     public void setWeight(float weight) {
         this.weight = weight;
     }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
+    @Override
+    public String toString() {
+        return "MedicalFile{" +
+                "id=" + id +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", patient=" + patient +
+                '}';
+    }
 }
